@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Prestige.Identity.Domain
+namespace Prestige.Identity.Data.Domain
 {
     public class User
     {

@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore;
 using Microsoft.AspNetCore.Hosting;
 
-namespace Prestige.Identity
+namespace Prestige.Identity.WebApi
 {
     public class Program
     {

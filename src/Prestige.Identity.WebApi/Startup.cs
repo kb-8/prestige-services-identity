@@ -4,9 +4,9 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.EntityFrameworkCore;
-using Prestige.Identity.DAL;
+using Prestige.Identity.Data.DAL;
 
-namespace Prestige.Identity
+namespace Prestige.Identity.WebApi
 {
     public class Startup
     {

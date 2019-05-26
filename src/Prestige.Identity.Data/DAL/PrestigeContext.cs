@@ -1,7 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using Prestige.Identity.Domain;
+using Prestige.Identity.Data.Domain;
 
-namespace Prestige.Identity.DAL
+namespace Prestige.Identity.Data.DAL
 {
     public class PrestigeContext : DbContext 
     {
