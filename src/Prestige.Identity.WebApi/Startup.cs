@@ -5,6 +5,8 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.EntityFrameworkCore;
 using Prestige.Identity.Data.DAL;
+using Prestige.Identity.Infrastructure.Repositories;
+using Prestige.Identity.Infrastructure.Services;
 
 namespace Prestige.Identity.WebApi
 {
@@ -24,6 +26,8 @@ namespace Prestige.Identity.WebApi
             var connection = Configuration.GetValue<string>("DbConnectionString");
             services.AddDbContext<PrestigeContext>
                 (options => options.UseSqlServer(connection));
+            services.AddScoped<IUserRepository, UserRepository>();
+            services.AddScoped<IIdentityService, IdentityService>();
         }
 
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)

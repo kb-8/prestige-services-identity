@@ -1,14 +1,27 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Prestige.Identity.Common.Commands;
+using Prestige.Identity.Infrastructure.Services;
+using System.Threading.Tasks;
 
 namespace Prestige.Identity.WebApi.Controllers
 {
-    [Route("")]
+    [Route("identity")]
     [ApiController]
     public class IdentityController : CommonController
     {
-        public IdentityController()
+        private readonly IIdentityService _identityService;
+
+        public IdentityController(IIdentityService identityService)
         {
+            _identityService = identityService;
+        }
+
+        [HttpPost("sign-up")]
+        public async Task<IActionResult> SignUp(SignUp command)
+        {
+            await _identityService.SignUpAsync(command.Name, command.Email, command.Password);
+
+            return NoContent();
         }
 
         [HttpPost("sign-in")]
