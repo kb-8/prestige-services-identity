@@ -25,7 +25,11 @@ namespace Prestige.Identity.WebApi.Controllers
         }
 
         [HttpPost("sign-in")]
-        public IActionResult SignIn(SignIn command)
-            => Ok();
+        public async Task<IActionResult> SignIn(SignIn command)
+        {
+            await _identityService.SignInAsync(command.Email, command.Password);
+
+            return Ok();
+        }
     }
 }

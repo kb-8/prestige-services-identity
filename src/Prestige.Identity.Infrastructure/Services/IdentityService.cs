@@ -9,6 +9,8 @@ namespace Prestige.Identity.Infrastructure.Services
     {
         private readonly IUserRepository _userRepository;
 
+        // TODO: Add busPublisher and jwttoken where is needed
+
         public IdentityService(IUserRepository userRepository)
         {
             _userRepository = userRepository;
@@ -31,6 +33,8 @@ namespace Prestige.Identity.Infrastructure.Services
         public async Task SignInAsync(string email, string password)
         {
             var user = await _userRepository.GetByEmailAsync(email);
+
+            // TODO: Verify password
         }
     }
 }
