@@ -9,7 +9,7 @@ using Prestige.Identity.Data.DAL;
 
 namespace Prestige.Identity.Data.Migrations
 {
-    [DbContext(typeof(PrestigeContext))]
+    [DbContext(typeof(IdentityDbContext))]
     [Migration("20190526191615_PrestigeDB")]
     partial class PrestigeDB
     {

@@ -3,9 +3,9 @@ using Prestige.Identity.Data.Domain;
 
 namespace Prestige.Identity.Data.DAL
 {
-    public class PrestigeContext : DbContext 
+    public class IdentityDbContext : DbContext 
     {
-        public PrestigeContext(DbContextOptions<PrestigeContext> options)
+        public IdentityDbContext(DbContextOptions<IdentityDbContext> options)
             : base(options)
         { }
 

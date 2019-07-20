@@ -3,7 +3,9 @@ using System;
 
 namespace Prestige.Identity.WebApi.Controllers
 {
-    public class CommonController : ControllerBase
+    [Route("api/[controller]")]
+    [ApiController]
+    public class BaseController : ControllerBase
     {
         protected Guid UserId
             => string.IsNullOrWhiteSpace(User?.Identity?.Name) ?
