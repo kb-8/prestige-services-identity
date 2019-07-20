@@ -5,9 +5,7 @@ using System.Threading.Tasks;
 
 namespace Prestige.Identity.WebApi.Controllers
 {
-    [Route("identity")]
-    [ApiController]
-    public class IdentityController : CommonController
+    public class IdentityController : BaseController
     {
         private readonly IIdentityService _identityService;
 

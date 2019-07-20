@@ -23,8 +23,8 @@ namespace Prestige.Identity.WebApi
         {
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
 
-            var connection = Configuration.GetValue<string>("DbConnectionString");
-            services.AddDbContext<PrestigeContext>
+            var connection = Configuration.GetValue<string>("IdentityDbConnectionString");
+            services.AddDbContext<IdentityDbContext>
                 (options => options.UseSqlServer(connection));
             services.AddScoped<IUserRepository, UserRepository>();
             services.AddScoped<IIdentityService, IdentityService>();
