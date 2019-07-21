@@ -19,7 +19,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Prestige.Identity.Common\Prestige.Identity.Common.csproj" />
     <ProjectReference Include="..\Prestige.Identity.Data\Prestige.Identity.Data.csproj" />
     <ProjectReference Include="..\Prestige.Identity.Infrastructure\Prestige.Identity.Infrastructure.csproj" />
   </ItemGroup>
