@@ -1,5 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using Prestige.Identity.Common.Commands;
+using Prestige.Identity.Infrastructure.Commands;
 using Prestige.Identity.Infrastructure.Services;
 using System.Threading.Tasks;
 
