@@ -1,4 +1,5 @@
 ﻿using Prestige.Identity.Data.Domain;
+using Prestige.Identity.Infrastructure.Extensions;
 using Prestige.Identity.Infrastructure.Repositories;
 using System;
 using System.Threading.Tasks;
@@ -25,7 +26,7 @@ namespace Prestige.Identity.Infrastructure.Services
                 throw new Exception($"Email: '{email}' is already in use.");
             }
 
-            user = new User(name, email, password);
+            user = new User(name, email, password.CreateHash());
             await _userRepository.AddAsync(user);
             _userRepository.SaveChanges();
         }
@@ -34,7 +35,10 @@ namespace Prestige.Identity.Infrastructure.Services
         {
             var user = await _userRepository.GetByEmailAsync(email);
 
-            // TODO: Verify password
+            if (user == null || password.CreateHash() != user.PasswordHash)
+            {
+                throw new Exception("Incorrect username or password.");
+            }
         }
     }
 }

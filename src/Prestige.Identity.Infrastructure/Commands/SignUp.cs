@@ -1,6 +1,6 @@
 ﻿using Newtonsoft.Json;
 
-namespace Prestige.Identity.Common.Commands
+namespace Prestige.Identity.Infrastructure.Commands
 {
     public class SignUp
     {
